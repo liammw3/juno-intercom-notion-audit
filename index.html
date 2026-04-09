@@ -3,105 +3,188 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juno Tax | Intercom → Notion Audit · April 9, 2026</title>
+  <title>Juno. | Intercom → Notion Audit · April 9, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    /* ── Juno Brand Colors ─────────────────────────────────
+       Juno Green:      #1CE49B
+       Juno Dark Green: #013A2F
+       Juno Light Green:#B4F7CA
+       Juno Off White:  #F8F9FA
+       Juno Black:      #1E1E1E
+    ─────────────────────────────────────────────────────── */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #f8f7ff;
-      color: #1f2937;
+      font-family: 'Outfit', -apple-system, sans-serif;
+      background: #F8F9FA;
+      color: #1E1E1E;
       min-height: 100vh;
+      font-weight: 300;
     }
+
+    /* ── HEADER ────────────────────────────────────────── */
     header {
-      background: linear-gradient(135deg, #4c1d95 0%, #6B46C1 50%, #7c3aed 100%);
+      background: #013A2F;
       color: white;
-      padding: 28px 40px 24px;
-      box-shadow: 0 4px 24px rgba(107,70,193,0.35);
+      padding: 32px 40px 28px;
     }
-    .header-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .header-left .logo-mark { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.65; margin-bottom: 6px; font-weight: 600; }
-    .header-left h1 { font-size: 1.55rem; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 4px; }
-    .header-left .subtitle { font-size: 0.875rem; opacity: 0.8; }
-    .header-right { text-align: right; }
-    .header-right .date-label { font-size: 0.75rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px; }
-    .header-right .date-val { font-size: 1rem; font-weight: 700; opacity: 0.9; }
-    .container { max-width: 1280px; margin: 0 auto; padding: 28px 24px 48px; }
-    
-    /* Summary */
-    .section-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: #6B46C1; margin-bottom: 12px; }
-    .summary-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; }
-    .summary-card {
-      background: white;
+    .header-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .wordmark {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: white;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    .wordmark span {
+      color: #1CE49B;
+    }
+    .header-title {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 4px;
+    }
+    .header-sub {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+    .header-right {
+      text-align: right;
+    }
+    .date-cap {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #1CE49B;
+      margin-bottom: 3px;
+    }
+    .date-val {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 400;
+    }
+
+    /* ── CONTAINER ─────────────────────────────────────── */
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 32px 24px 60px;
+    }
+
+    /* ── SECTION LABEL ─────────────────────────────────── */
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #1CE49B;
+      margin-bottom: 14px;
+    }
+
+    /* ── SUMMARY CARDS ─────────────────────────────────── */
+    .cards-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .total-card {
+      background: #013A2F;
       border-radius: 10px;
-      padding: 14px 20px;
+      padding: 16px 24px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.07);
-      border: 1px solid #e5e7eb;
-      min-width: 170px;
+      gap: 14px;
+      min-width: 160px;
+      box-shadow: 0 2px 12px rgba(1,58,47,0.25);
     }
-    .total-card { background: linear-gradient(135deg, #6B46C1, #4c1d95); border: none; }
-    .total-card .count { color: white; }
-    .total-card .label { color: rgba(255,255,255,0.75); }
-    .count { font-size: 1.8rem; font-weight: 800; line-height: 1; }
-    .label { font-size: 0.78rem; color: #6b7280; font-weight: 500; margin-top: 2px; }
-    
-    /* Table */
+    .total-card .tc-count { font-size: 2rem; font-weight: 700; color: #1CE49B; line-height: 1; }
+    .total-card .tc-label { font-size: 0.75rem; color: rgba(255,255,255,0.65); font-weight: 400; margin-top: 2px; }
+    .card {
+      border-radius: 10px;
+      padding: 14px 18px;
+      min-width: 140px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .card-count { font-size: 1.6rem; font-weight: 700; line-height: 1; margin-bottom: 2px; }
+    .card-label { font-size: 0.72rem; color: #6B7280; font-weight: 400; line-height: 1.3; }
+
+    /* ── TABLE ─────────────────────────────────────────── */
     .table-wrap {
       background: white;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      border: 1px solid #e5e7eb;
+      box-shadow: 0 2px 16px rgba(1,58,47,0.08);
+      border: 1px solid #E5E7EB;
     }
     table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-    thead tr { background: linear-gradient(135deg, #6B46C1, #553c9a); }
-    thead th { 
-      padding: 13px 16px; 
-      text-align: left; 
-      font-weight: 600; 
-      font-size: 0.73rem; 
-      text-transform: uppercase; 
-      letter-spacing: 0.07em; 
-      color: white;
-      white-space: nowrap; 
-    }
-    tbody tr { border-bottom: 1px solid #f0f0f0; transition: background 0.1s; }
-    tbody tr:last-child { border-bottom: none; }
-    tbody tr:hover { background: #f5f3ff !important; }
-    tbody td { padding: 11px 16px; vertical-align: middle; }
-    td:first-child { font-weight: 600; font-size: 0.82rem; white-space: nowrap; }
-    .subject { font-size: 0.75rem; color: #6b7280; font-weight: 400; display: block; margin-top: 2px; max-width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    
-    .badge {
-      display: inline-block;
-      padding: 3px 9px;
-      border-radius: 20px;
-      font-size: 0.72rem;
+    thead tr { background: #013A2F; }
+    thead th {
+      padding: 13px 16px;
+      text-align: left;
       font-weight: 600;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.85);
       white-space: nowrap;
     }
-    .link { color: #6B46C1; text-decoration: none; font-weight: 500; }
-    .link:hover { text-decoration: underline; color: #553c9a; }
-    
+    thead th:first-child { color: #1CE49B; }
+    tbody tr { border-bottom: 1px solid #F0F0F0; transition: background 0.1s; }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: #EDFAF4 !important; }
+    tbody td { padding: 11px 16px; vertical-align: middle; }
+    td:first-child { white-space: nowrap; }
+    .mono { font-family: 'Outfit', monospace; font-weight: 600; font-size: 0.82rem; }
+    .subj { display: block; font-size: 0.73rem; color: #6B7280; font-weight: 300; margin-top: 2px; max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .link { color: #013A2F; text-decoration: none; font-weight: 500; }
+    .link:hover { color: #1CE49B; text-decoration: underline; }
+    .no-link { color: #9CA3AF; font-style: italic; font-size: 0.82rem; }
+    .unassigned { color: #D1D5DB; }
+    .lead { font-size: 0.82rem; color: #4B5563; font-weight: 400; }
+
+    /* ── FOOTER ────────────────────────────────────────── */
     footer {
       text-align: center;
-      padding: 28px 24px 40px;
+      padding: 28px 24px 44px;
       font-size: 0.75rem;
-      color: #9ca3af;
-      border-top: 1px solid #e5e7eb;
-      margin-top: 8px;
+      color: #9CA3AF;
+      border-top: 1px solid #E5E7EB;
+      margin-top: 4px;
+      font-weight: 300;
     }
-    footer strong { color: #6B46C1; }
-    
+    footer .brand { color: #013A2F; font-weight: 600; }
+    footer .dot { color: #1CE49B; }
+
     @media (max-width: 768px) {
-      .summary-grid { flex-direction: column; }
-      .summary-card { min-width: auto; }
-      table { font-size: 0.8rem; }
-      thead th, tbody td { padding: 9px 10px; }
+      .cards-row { flex-direction: column; }
       .header-inner { flex-direction: column; align-items: flex-start; }
       .header-right { text-align: left; }
+      table { font-size: 0.8rem; }
+      thead th, tbody td { padding: 9px 10px; }
     }
   </style>
 </head>
@@ -109,13 +192,13 @@
 
 <header>
   <div class="header-inner">
-    <div class="header-left">
-      <div class="logo-mark">Juno Tax · Support Operations</div>
-      <h1>Intercom → Notion Audit</h1>
-      <div class="subtitle">All open <strong>"Waiting on Engineering"</strong> tickets with Notion bug tracking status</div>
+    <div>
+      <div class="wordmark">JUN<span>O</span>.</div>
+      <div class="header-title">Intercom &rarr; Notion Audit</div>
+      <div class="header-sub">All open &ldquo;Waiting on Engineering&rdquo; tickets &middot; Support Operations</div>
     </div>
     <div class="header-right">
-      <div class="date-label">Generated</div>
+      <div class="date-cap">Generated</div>
       <div class="date-val">Thursday, April 9, 2026</div>
     </div>
   </div>
@@ -123,60 +206,50 @@
 
 <div class="container">
 
-  <div class="section-label">Summary by Status</div>
-  <div class="summary-grid">
-    <div class="summary-card total-card">
-          <div class="count">38</div>
-          <div class="label">Total Waiting on Eng</div>
-        </div>
-        <div class="summary-card" style="border-left:4px solid #d97706">
-          <div>
-            <div class="count" style="color:#d97706">2</div>
-            <div class="label">In Testing</div>
-          </div>
-        </div>
-        <div class="summary-card" style="border-left:4px solid #059669">
-          <div>
-            <div class="count" style="color:#059669">3</div>
-            <div class="label">Pending Release</div>
-          </div>
-        </div>
-        <div class="summary-card" style="border-left:4px solid #7c3aed">
-          <div>
-            <div class="count" style="color:#7c3aed">1</div>
-            <div class="label">Awaiting Customer Confirmation</div>
-          </div>
-        </div>
-        <div class="summary-card" style="border-left:4px solid #2563eb">
-          <div>
-            <div class="count" style="color:#2563eb">4</div>
-            <div class="label">In progress</div>
-          </div>
-        </div>
-        <div class="summary-card" style="border-left:4px solid #dc2626">
-          <div>
-            <div class="count" style="color:#dc2626">2</div>
-            <div class="label">Need More Info</div>
-          </div>
-        </div>
-        <div class="summary-card" style="border-left:4px solid #6b7280">
-          <div>
-            <div class="count" style="color:#6b7280">13</div>
-            <div class="label">Not started</div>
-          </div>
-        </div>
-        <div class="summary-card" style="border-left:4px solid #374151">
-          <div>
-            <div class="count" style="color:#374151">1</div>
-            <div class="label">Closed for Inactivity</div>
-          </div>
-        </div>
-        <div class="summary-card" style="border-left:4px solid #9ca3af">
-          <div>
-            <div class="count" style="color:#9ca3af">11</div>
-            <div class="label">No Notion Link</div>
-          </div>
-        </div>
+  <div class="section-label">Overview</div>
+  <div class="cards-row">
+    <div class="total-card">
+      <div>
+        <div class="tc-count">38</div>
+        <div class="tc-label">Total tickets<br>waiting on eng</div>
+      </div>
+    </div>
+    <div class="card" style="border-top:3px solid #D97706;background:#FEF3C7">
+      <div class="card-count" style="color:#D97706">2</div>
+      <div class="card-label">In Testing</div>
+    </div>
+    <div class="card" style="border-top:3px solid #059669;background:#D1FAE5">
+      <div class="card-count" style="color:#059669">3</div>
+      <div class="card-label">Pending Release</div>
+    </div>
+    <div class="card" style="border-top:3px solid #10B981;background:#ECFDF5">
+      <div class="card-count" style="color:#10B981">1</div>
+      <div class="card-label">Awaiting Customer Confirmation</div>
+    </div>
+    <div class="card" style="border-top:3px solid #3B82F6;background:#DBEAFE">
+      <div class="card-count" style="color:#3B82F6">4</div>
+      <div class="card-label">In progress</div>
+    </div>
+    <div class="card" style="border-top:3px solid #EF4444;background:#FEE2E2">
+      <div class="card-count" style="color:#EF4444">2</div>
+      <div class="card-label">Need More Info</div>
+    </div>
+    <div class="card" style="border-top:3px solid #6B7280;background:#F3F4F6">
+      <div class="card-count" style="color:#6B7280">13</div>
+      <div class="card-label">Not started</div>
+    </div>
+    <div class="card" style="border-top:3px solid #9CA3AF;background:#F9FAFB">
+      <div class="card-count" style="color:#9CA3AF">1</div>
+      <div class="card-label">Closed for Inactivity</div>
+    </div>
+    <div class="card" style="border-top:3px solid #9CA3AF;background:#F9FAFB">
+      <div class="card-count" style="color:#9CA3AF">11</div>
+      <div class="card-label">No Notion Link</div>
+    </div>
+    <div class="card" style="border-top:3px solid #9CA3AF;background:#F9FAFB">
+      <div class="card-count" style="color:#9CA3AF">1</div>
+      <div class="card-label">Unknown</div>
+    </div>
   </div>
 
   <div class="section-label">All Tickets</div>
@@ -192,271 +265,340 @@
         </tr>
       </thead>
       <tbody>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473741638543" target="_blank" class="link">#638543</a></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473741638543" target="_blank" class="link mono">#638543</a></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33553923fa4280dab2d3e6ba9aba9c51&pm=s" target="_blank" class="link">CS-725 — Schedule E incorrect data extraction</a></td>
-          <td><span class="badge" style="background:#fef3c7;color:#d97706;border:1.5px solid #d9770620">In Testing</span></td>
-          <td>Jack Flitcroft</td>
+          <td><span class="badge" style="background:#FEF3C7;color:#92400E;border:1.5px solid #D97706">🔬 In Testing</span></td>
+          <td class="lead">Jack Flitcroft</td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473438980596" target="_blank" class="link">#980596</a></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473438980596" target="_blank" class="link mono">#980596</a></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=32053923fa42800aac4edb58a6b3ee2f&pm=s" target="_blank" class="link">CS-562 — Unable to type in Support chat when form is being validated</a></td>
-          <td><span class="badge" style="background:#fef3c7;color:#d97706;border:1.5px solid #d9770620">In Testing</span></td>
-          <td>Silvester Cekodhima</td>
+          <td><span class="badge" style="background:#FEF3C7;color:#92400E;border:1.5px solid #D97706">🔬 In Testing</span></td>
+          <td class="lead">Silvester Cekodhima</td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473767107312" target="_blank" class="link">#107312</a></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473767107312" target="_blank" class="link mono">#107312</a></td>
           <td>Sabrina Chavez</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33753923fa4280068f1ccb2ee7b637b0&pm=s" target="_blank" class="link">CS-733 — Prep status not flipping, UT error prevents status to export complete even if export did complete, please adjust</a></td>
-          <td><span class="badge" style="background:#d1fae5;color:#059669;border:1.5px solid #05966920">Pending Release</span></td>
-          <td>Armend Ahmeti</td>
+          <td><span class="badge" style="background:#D1FAE5;color:#065F46;border:1.5px solid #059669">🚀 Pending Release</span></td>
+          <td class="lead">Armend Ahmeti</td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473756273643" target="_blank" class="link">#273643</a><br><span class="subject">Schedule C / E and Source Data Entry</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473756273643" target="_blank" class="link mono">#273643</a><span class="subj">Schedule C / E and Source Data Entry</span></td>
           <td>Sabrina Chavez</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33753923fa42805e969cd3ea5f592825&pm=s" target="_blank" class="link">CS-732 — UltraTax schedule mapping not able to choose anything but “add new”</a></td>
-          <td><span class="badge" style="background:#d1fae5;color:#059669;border:1.5px solid #05966920">Pending Release</span></td>
-          <td>Casey</td>
+          <td><span class="badge" style="background:#D1FAE5;color:#065F46;border:1.5px solid #059669">🚀 Pending Release</span></td>
+          <td class="lead">Casey</td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473620467875" target="_blank" class="link">#467875</a></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473620467875" target="_blank" class="link mono">#467875</a></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=32e53923fa428061a16fe6c038b81f99&pm=s" target="_blank" class="link">CS-672 — Update Preparation Status</a></td>
-          <td><span class="badge" style="background:#d1fae5;color:#059669;border:1.5px solid #05966920">Pending Release</span></td>
-          <td>Armend Ahmeti</td>
+          <td><span class="badge" style="background:#D1FAE5;color:#065F46;border:1.5px solid #059669">🚀 Pending Release</span></td>
+          <td class="lead">Armend Ahmeti</td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473726465157" target="_blank" class="link">#465157</a><br><span class="subject">We're Having Binder Issues</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473726465157" target="_blank" class="link mono">#465157</a><span class="subj">We're Having Binder Issues</span></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33553923fa428092958dd9b5cd6f664a&pm=s" target="_blank" class="link">CS-710 — Binder Failed to Load Error Messagec</a></td>
-          <td><span class="badge" style="background:#ede9fe;color:#7c3aed;border:1.5px solid #7c3aed20">Awaiting Customer Confirmation</span></td>
-          <td>Drilon Shabani</td>
+          <td><span class="badge" style="background:#ECFDF5;color:#047857;border:1.5px solid #10B981">⏳ Awaiting Confirmation</span></td>
+          <td class="lead">Drilon Shabani</td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473665259793" target="_blank" class="link">#259793</a><br><span class="subject">BUSINESS CLIENT -- asking for SS# instead of EIN#</span></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473665259793" target="_blank" class="link mono">#259793</a><span class="subj">BUSINESS CLIENT -- asking for SS# instead of EIN#</span></td>
           <td>Lorena Modesto</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33053923fa428098a215eb4aa50965bd&pm=s" target="_blank" class="link">CS-684 — Business Client asking for SSN # (should be EIN)</a></td>
-          <td><span class="badge" style="background:#dbeafe;color:#2563eb;border:1.5px solid #2563eb20">In progress</span></td>
-          <td>Egzon Bejta</td>
+          <td><span class="badge" style="background:#DBEAFE;color:#1E40AF;border:1.5px solid #3B82F6">🔧 In Progress</span></td>
+          <td class="lead">Egzon Bejta</td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473672637047" target="_blank" class="link">#637047</a><br><span class="subject">Review Plan Comments</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473672637047" target="_blank" class="link mono">#637047</a><span class="subj">Review Plan Comments</span></td>
           <td>Sabrina Chavez</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33353923fa4280d5bc54cfb4da28fb8f&pm=s" target="_blank" class="link">CS-692 — Review Plan incorrect - sched b missing form, withdrawl penalty</a></td>
-          <td><span class="badge" style="background:#dbeafe;color:#2563eb;border:1.5px solid #2563eb20">In progress</span></td>
-          <td>Jack Flitcroft</td>
+          <td><span class="badge" style="background:#DBEAFE;color:#1E40AF;border:1.5px solid #3B82F6">🔧 In Progress</span></td>
+          <td class="lead">Jack Flitcroft</td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473570086511" target="_blank" class="link">#086511</a><br><span class="subject">INaccuracy on reviewer</span></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473570086511" target="_blank" class="link mono">#086511</a><span class="subj">INaccuracy on reviewer</span></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33353923fa4280119405eca560333547&pm=s" target="_blank" class="link">CS-700 — Reviewer Highlighting Incorrect Key Findings</a></td>
-          <td><span class="badge" style="background:#dbeafe;color:#2563eb;border:1.5px solid #2563eb20">In progress</span></td>
-          <td>Jack Flitcroft</td>
+          <td><span class="badge" style="background:#DBEAFE;color:#1E40AF;border:1.5px solid #3B82F6">🔧 In Progress</span></td>
+          <td class="lead">Jack Flitcroft</td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473614290904" target="_blank" class="link">#290904</a><br><span class="subject">Reviewer hallucinations</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473614290904" target="_blank" class="link mono">#290904</a><span class="subj">Reviewer hallucinations</span></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33353923fa42813fad33e69ff9b0e65a&pm=s" target="_blank" class="link">CS-697 — Reviewer Incorrectly Requires Form 8606 for QCD</a></td>
-          <td><span class="badge" style="background:#dbeafe;color:#2563eb;border:1.5px solid #2563eb20">In progress</span></td>
-          <td>Jack Flitcroft</td>
+          <td><span class="badge" style="background:#DBEAFE;color:#1E40AF;border:1.5px solid #3B82F6">🔧 In Progress</span></td>
+          <td class="lead">Jack Flitcroft</td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473724728170" target="_blank" class="link">#728170</a></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473724728170" target="_blank" class="link mono">#728170</a></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33c53923fa4280e1b67ecae55a5c7f86&pm=s" target="_blank" class="link">CS-751 — Export Errors on 1098s in UT</a></td>
-          <td><span class="badge" style="background:#fee2e2;color:#dc2626;border:1.5px solid #dc262620">Need More Info</span></td>
-          <td>Casey</td>
+          <td><span class="badge" style="background:#FEE2E2;color:#991B1B;border:1.5px solid #EF4444">❓ Need More Info</span></td>
+          <td class="lead">Casey</td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473800431782" target="_blank" class="link">#431782</a><br><span class="subject">Interest income doesn't go to schedule b</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473800431782" target="_blank" class="link mono">#431782</a><span class="subj">Interest income doesn't go to schedule b</span></td>
           <td>Lorena Modesto</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33d53923fa42802686b6cc0a7f563d2f&pm=s" target="_blank" class="link">CS-753 — Interest Income going to State & local income tax refunds in UT</a></td>
-          <td><span class="badge" style="background:#fee2e2;color:#dc2626;border:1.5px solid #dc262620">Need More Info</span></td>
-          <td>Casey</td>
+          <td><span class="badge" style="background:#FEE2E2;color:#991B1B;border:1.5px solid #EF4444">❓ Need More Info</span></td>
+          <td class="lead">Casey</td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473815099784" target="_blank" class="link">#099784</a></td>
+        <tr style="backg7107312" target="_blank" class="link mono">#107312</a></td>
+          <td>Sabrina Chavez</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33753923fa4280068f1ccb2ee7b637b0&pm=s" target="_blank" class="link">CS-733 — Prep status not flipping, UT error prevents status to export complete even if export did complete, please adjust</a></td>
+          <td><span class="badge" style="background:#D1FAE5;color:#065F46;border:1.5px solid #059669">🚀 Pending Release</span></td>
+          <td class="lead">Armend Ahmeti</td>
+        </tr>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473756273643" target="_blank" class="link mono">#273643</a><span class="subj">Schedule C / E and Source Data Entry</span></td>
+          <td>Sabrina Chavez</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33753923fa42805e969cd3ea5f592825&pm=s" target="_blank" class="link">CS-732 — UltraTax schedule mapping not able to choose anything but “add new”</a></td>
+          <td><span class="badge" style="background:#D1FAE5;color:#065F46;border:1.5px solid #059669">🚀 Pending Release</span></td>
+          <td class="lead">Casey</td>
+        </tr>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473620467875" target="_blank" class="link mono">#467875</a></td>
+          <td>Josh Hunter</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=32e53923fa428061a16fe6c038b81f99&pm=s" target="_blank" class="link">CS-672 — Update Preparation Status</a></td>
+          <td><span class="badge" style="background:#D1FAE5;color:#065F46;border:1.5px solid #059669">🚀 Pending Release</span></td>
+          <td class="lead">Armend Ahmeti</td>
+        </tr>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473726465157" target="_blank" class="link mono">#465157</a><span class="subj">We're Having Binder Issues</span></td>
+          <td>Josh Hunter</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33553923fa428092958dd9b5cd6f664a&pm=s" target="_blank" class="link">CS-710 — Binder Failed to Load Error Messagec</a></td>
+          <td><span class="badge" style="background:#ECFDF5;color:#047857;border:1.5px solid #10B981">⏳ Awaiting Confirmation</span></td>
+          <td class="lead">Drilon Shabani</td>
+        </tr>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473665259793" target="_blank" class="link mono">#259793</a><span class="subj">BUSINESS CLIENT -- asking for SS# instead of EIN#</span></td>
+          <td>Lorena Modesto</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33053923fa428098a215eb4aa50965bd&pm=s" target="_blank" class="link">CS-684 — Business Client asking for SSN # (should be EIN)</a></td>
+          <td><span class="badge" style="background:#DBEAFE;color:#1E40AF;border:1.5px solid #3B82F6">🔧 In Progress</span></td>
+          <td class="lead">Egzon Bejta</td>
+        </tr>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473672637047" target="_blank" class="link mono">#637047</a><span class="subj">Review Plan Comments</span></td>
+          <td>Sabrina Chavez</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33353923fa4280d5bc54cfb4da28fb8f&pm=s" target="_blank" class="link">CS-692 — Review Plan incorrect - sched b missing form, withdrawl penalty</a></td>
+          <td><span class="badge" style="background:#DBEAFE;color:#1E40AF;border:1.5px solid #3B82F6">🔧 In Progress</span></td>
+          <td class="lead">Jack Flitcroft</td>
+        </tr>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473570086511" target="_blank" class="link mono">#086511</a><span class="subj">INaccuracy on reviewer</span></td>
+          <td>Josh Hunter</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33353923fa4280119405eca560333547&pm=s" target="_blank" class="link">CS-700 — Reviewer Highlighting Incorrect Key Findings</a></td>
+          <td><span class="badge" style="background:#DBEAFE;color:#1E40AF;border:1.5px solid #3B82F6">🔧 In Progress</span></td>
+          <td class="lead">Jack Flitcroft</td>
+        </tr>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473614290904" target="_blank" class="link mono">#290904</a><span class="subj">Reviewer hallucinations</span></td>
+          <td>Josh Hunter</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33353923fa42813fad33e69ff9b0e65a&pm=s" target="_blank" class="link">CS-697 — Reviewer Incorrectly Requires Form 8606 for QCD</a></td>
+          <td><span class="badge" style="background:#DBEAFE;color:#1E40AF;border:1.5px solid #3B82F6">🔧 In Progress</span></td>
+          <td class="lead">Jack Flitcroft</td>
+        </tr>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473724728170" target="_blank" class="link mono">#728170</a></td>
+          <td>Josh Hunter</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33c53923fa4280e1b67ecae55a5c7f86&pm=s" target="_blank" class="link">CS-751 — Export Errors on 1098s in UT</a></td>
+          <td><span class="badge" style="background:#FEE2E2;color:#991B1B;border:1.5px solid #EF4444">❓ Need More Info</span></td>
+          <td class="lead">Casey</td>
+        </tr>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473800431782" target="_blank" class="link mono">#431782</a><span class="subj">Interest income doesn't go to schedule b</span></td>
+          <td>Lorena Modesto</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33d53923fa42802686b6cc0a7f563d2f&pm=s" target="_blank" class="link">CS-753 — Interest Income going to State & local income tax refunds in UT</a></td>
+          <td><span class="badge" style="background:#FEE2E2;color:#991B1B;border:1.5px solid #EF4444">❓ Need More Info</span></td>
+          <td class="lead">Casey</td>
+        </tr>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473815099784" target="_blank" class="link mono">#099784</a></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33c53923fa4280c59c13f35692322f2f&pm=s" target="_blank" class="link">CS-746 — Advisor Tax Strategy Deep Analysis Issues</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Vishnu Appalaraju</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead">Vishnu Appalaraju</td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473817508126" target="_blank" class="link">#508126</a></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473817508126" target="_blank" class="link mono">#508126</a></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33c53923fa42802c98acec466ba3f12f&pm=s" target="_blank" class="link">CS-745 — Brokerage Statement Not Showing Up in Binder</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Sunny Shah</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead">Sunny Shah</td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473828864343" target="_blank" class="link">#864343</a><br><span class="subject">Document error</span></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473828864343" target="_blank" class="link mono">#864343</a><span class="subj">Document error</span></td>
           <td>Lorena Modesto</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33c53923fa4280469255f0861d157aa5&pm=s" target="_blank" class="link">CS-749 — K-1 upload error when sending from TaxDome</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Sunny Shah</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead">Sunny Shah</td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473777771008" target="_blank" class="link">#771008</a><br><span class="subject">Juno App - Last Exported Column</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473777771008" target="_blank" class="link mono">#771008</a><span class="subj">Juno App - Last Exported Column</span></td>
           <td>Lorena Modesto</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33d53923fa4280e69465d77c96d0e509&pm=s" target="_blank" class="link">CS-754 — Last Exported Column - Feature Request</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Grant Lacy</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead">Grant Lacy</td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473789281818" target="_blank" class="link">#281818</a><br><span class="subject">1099-MISC routing</span></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473789281818" target="_blank" class="link mono">#281818</a><span class="subj">1099-MISC routing</span></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33a53923fa4280fda4accac6b4f7db0d&pm=s" target="_blank" class="link">CS-739 — No Other Income field for mapping 1099-Misc in Drake</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Vishnu Appalaraju</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead">Vishnu Appalaraju</td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473810612655" target="_blank" class="link">#612655</a></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473810612655" target="_blank" class="link mono">#612655</a></td>
           <td>Sabrina Chavez</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33b53923fa4280ba8bd7cf2c58a07a1a&pm=s" target="_blank" class="link">CS-742 — Review inaccuracy on Social Security reported</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Unassigned</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473813439054" target="_blank" class="link">#439054</a></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473813439054" target="_blank" class="link mono">#439054</a></td>
           <td>Sabrina Chavez</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33b53923fa428007ad7be1caf65295a8&pm=s" target="_blank" class="link">CS-743 — Reviewer Error - Schedule D — Missing Parents' Brokerage Capital Gains/losses</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Unassigned</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473709303513" target="_blank" class="link">#303513</a></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473709303513" target="_blank" class="link mono">#303513</a></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33453923fa428146bd10e33859f4ae77&pm=s" target="_blank" class="link">CS-704 — Reviewer Incorrectly Detecting IP PIN When Client Has None</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Jack Flitcroft</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead">Jack Flitcroft</td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473778517464" target="_blank" class="link">#517464</a></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473778517464" target="_blank" class="link mono">#517464</a></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33a53923fa428064a058f7ee72c6bb06&pm=s" target="_blank" class="link">CS-736 — Reviewer Issues</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Unassigned</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473629611784" target="_blank" class="link">#611784</a></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473629611784" target="_blank" class="link mono">#611784</a></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33c53923fa428047bb2febf1c297b5c6&pm=s" target="_blank" class="link">CS-675 — Reviewer Missing Checkboxes</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Unassigned</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473637246259" target="_blank" class="link">#246259</a></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473637246259" target="_blank" class="link mono">#246259</a></td>
           <td>Josh Hunter</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=32f53923fa4280cdb013e7a30a08f9d0&pm=s" target="_blank" class="link">CS-675 — Reviewer Missing Checkboxes</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Daniel Leskiewicz</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead">Daniel Leskiewicz</td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473740434338" target="_blank" class="link">#434338</a><br><span class="subject">FYI Only - Reviewer error</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473740434338" target="_blank" class="link mono">#434338</a><span class="subj">FYI Only - Reviewer error</span></td>
           <td>Lorena Modesto</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33553923fa42805792bec4b642577d0f&pm=s" target="_blank" class="link">CS-720 — Reviewer error - Educator Expense</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Unassigned</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473749522435" target="_blank" class="link">#522435</a><br><span class="subject">Consistent Issue with misaligned lines</span></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473749522435" target="_blank" class="link mono">#522435</a><span class="subj">Consistent Issue with misaligned lines</span></td>
           <td>Lorena Modesto</td>
           <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33653923fa428065b9a2eccf19268e9f&pm=s" target="_blank" class="link">CS-726 — Reviewer picking up wrong line for mileage</a></td>
-          <td><span class="badge" style="background:#f3f4f6;color:#6b7280;border:1.5px solid #6b728020">Not started</span></td>
-          <td>Unassigned</td>
+          <td><span class="badge" style="background:#F3F4F6;color:#374151;border:1.5px solid #9CA3AF">— Not Started</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473668769405" target="_blank" class="link">#769405</a><br><span class="subject">Reviewer Issues</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473668769405" target="_blank" class="link mono">#769405</a><span class="subj">Reviewer Issues</span></td>
           <td>Lorena Modesto</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#e5e7eb;color:#374151;border:1.5px solid #37415120">Closed for Inactivity</span></td>
-          <td>Jack Flitcroft</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33053923fa42803da2e6c2b1fe671598&pm=s" target="_blank" class="link">W-2 box 13 checking incorrect box</a></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#6B7280;border:1.5px solid #D1D5DB">✓ Closed / Inactive</span></td>
+          <td class="lead">Jack Flitcroft</td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473829824934" target="_blank" class="link">#824934</a></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473829824934" target="_blank" class="link mono">#824934</a></td>
           <td>Lorena Modesto</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">Unknown</span></td>
-          <td>Unassigned</td>
+          <td><a href="https://www.notion.so/Customer-Support-Board-1f553923fa4280f98102fe2d294dffc5?p=33c53923fa428032858bd621e9d6d03f&pm=s" target="_blank" class="link">(could not retrieve)</a></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">Unknown</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473633502401" target="_blank" class="link">#502401</a></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473633502401" target="_blank" class="link mono">#502401</a></td>
           <td>Lorena Modesto</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473714307739" target="_blank" class="link">#307739</a></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473714307739" target="_blank" class="link mono">#307739</a></td>
           <td>Josh Hunter</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473772905653" target="_blank" class="link">#905653</a><br><span class="subject">FYI - NO RESPONSE REQUIRED</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473772905653" target="_blank" class="link mono">#905653</a><span class="subj">FYI - NO RESPONSE REQUIRED</span></td>
           <td>Josh Hunter</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473777787569" target="_blank" class="link">#787569</a><br><span class="subject">review problem - Jared & Bridget Patota</span></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473777787569" target="_blank" class="link mono">#787569</a><span class="subj">review problem - Jared & Bridget Patota</span></td>
           <td>Josh Hunter</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473193393831" target="_blank" class="link">#393831</a><br><span class="subject">Reviewer discrepancy</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473193393831" target="_blank" class="link mono">#393831</a><span class="subj">Reviewer discrepancy</span></td>
           <td>Sabrina Chavez</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473703641444" target="_blank" class="link">#641444</a></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473703641444" target="_blank" class="link mono">#641444</a></td>
           <td>Josh Hunter</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473648269512" target="_blank" class="link">#269512</a></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473648269512" target="_blank" class="link mono">#269512</a></td>
           <td>Josh Hunter</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473655817603" target="_blank" class="link">#817603</a><br><span class="subject">review issue #3</span></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473655817603" target="_blank" class="link mono">#817603</a><span class="subj">review issue #3</span></td>
           <td>Josh Hunter</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473691074836" target="_blank" class="link">#074836</a><br><span class="subject">Reviewer's Plan</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473691074836" target="_blank" class="link mono">#074836</a><span class="subj">Reviewer's Plan</span></td>
           <td>Josh Hunter</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#ffffff">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473670294611" target="_blank" class="link">#294611</a><br><span class="subject">Dang/Shibuya review</span></td>
+        <tr style="background:#FFFFFF">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473670294611" target="_blank" class="link mono">#294611</a><span class="subj">Dang/Shibuya review</span></td>
           <td>Lorena Modesto</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
-        <tr style="background:#fafafa">
-          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473494919813" target="_blank" class="link">#919813</a><br><span class="subject">Form 1099-MISC - Other Income</span></td>
+        <tr style="background:#F8FFFE">
+          <td><a href="https://app.intercom.com/a/apps/rc7bfq1j/conversations/215473494919813" target="_blank" class="link mono">#919813</a><span class="subj">Form 1099-MISC - Other Income</span></td>
           <td>Lorena Modesto</td>
-          <td><span style="color:#9ca3af;font-style:italic">No Notion link</span></td>
-          <td><span class="badge" style="background:#f9fafb;color:#9ca3af;border:1.5px solid #9ca3af20">No Notion Link</span></td>
-          <td>Unassigned</td>
+          <td><span class="no-link">No Notion link</span></td>
+          <td><span class="badge" style="background:#F9FAFB;color:#9CA3AF;border:1.5px solid #E5E7EB">No Notion Link</span></td>
+          <td class="lead"><span class="unassigned">—</span></td>
         </tr>
       </tbody>
     </table>
@@ -465,8 +607,9 @@
 </div>
 
 <footer>
-  <strong>Juno Tax</strong> &middot; Thursday Intercom → Notion Audit &middot; April 9, 2026<br>
-  Generated automatically &middot; Data sourced live from Intercom MCP + Notion via Claude in Chrome
+  <span class="brand">JUN<span class="dot">O</span>.</span> &nbsp;&middot;&nbsp; Thursday Intercom &rarr; Notion Audit &nbsp;&middot;&nbsp; April 9, 2026<br>
+  Generated automatically &middot; Data sourced live from Intercom + Notion via Claude in Cowork
 </footer>
+
 </body>
 </html>
